@@ -1,6 +1,8 @@
 <?php
     session_start();
 
+    // Nous vérifions alors l'existence de la clé "submit" dans le tableau $_POST, 
+    // celle clé correspondant à l'attribut "name" du bouton <input type="submit" name="submit"> du formulaire
     if(isset($_POST['submit'])) {
 
         // On vérifie que les données saisies dans le formulaire sont conformes aux données attendues
@@ -25,4 +27,5 @@
         }
     }
 
+    // Redirection vers index.php   
     header("Location:index.php");

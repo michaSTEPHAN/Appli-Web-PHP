@@ -7,8 +7,13 @@
     </head>
     <body>
         <h1>Ajouter un produit</h1>
+
+        <!-- la balise <form> comporte deux attributs : -->
+        <!--   -> action (qui indique la cible du formulaire, le fichier à atteindre lorsque l'utilisateur soumettra le formulaire) -->
+        <!--   -> method (qui précise par quelle méthode HTTP les données du formulaire seront transmises au serveur) -->
         <form action="traitement.php" method="post">
             <p>
+                <!-- label = champ de saisie -->
                 <label>
                     Nom de produit :
                     <input type="text" name="name">
@@ -27,6 +32,7 @@
                 </label>        
             </p>
             <p>
+                <!-- bouton de soumission du formulaire -->
                 <input type="submit" name="submit" value="Ajouter le produit">
             </p>
         </form>

@@ -11,13 +11,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Récapitulatif des produits</title>
     </head>
-    <body>
-        
+    <body>        
         <?php 
+            // Soit la clé "products" du tableau de session $_SESSION n'existe pas : !isset()
+            // Soit cette clé existe mais ne contient aucune donnée : empty()
             if(!isset($_SESSION['produits']) || empty($_SESSION['produits']) ) {
                 echo "<p>Aucun produit en session...</p>";
             } else {
-                
+                // Affichage des données dans un tableau HTML
+                //      -> thead = entête de colonne
+                //      -> body  = ligne de données produits
                 echo    "<table>",        
                             "<thead>",        
                                 "<tr>",
@@ -30,6 +33,7 @@
                             "</thead>",
                             "<body>";
                                 $totalGeneral = 0;
+                                // On parcoure le formulaire "produits"
                                 foreach($_SESSION['produits'] as $index => $produit) {
                                     echo "<tr>",
                                             "<td>".$index."</td>",
@@ -40,6 +44,7 @@
                                         "</tr>";
                                     $totalGeneral += $produit['total'];
                                 }
+                                // On affiche le total général
                                 echo "<tr>",
                                         "<td colspan=4>Total général : </td>",
                                         "<td><strong>".number_format($totalGeneral,2,",","&nbsp;")."&nbsp;€</strong></td>",
