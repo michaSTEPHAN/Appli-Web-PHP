@@ -1,0 +1,69 @@
+PHP - Les Superglobales
+
+https://www.php.net/manual/fr/language.variables.superglobals.php
+
+Plusieurs variables prédéfinies en PHP sont "superglobales", ce qui signifie qu'elles sont disponibles quel que soit le contexte du script.
+Les variables superglobales sont :
+
+$GLOBALS
+$_SERVER
+$_GET
+$_POST
+$_FILES
+$_COOKIE
+$_SESSION
+$_REQUEST
+$_ENV
+
+Détails de chaque variable :
+
+$GLOBALS
+	- Référence toutes les variables disponibles dans un contexte global
+	- C'est un tableau associatif contenant les références sur toutes les variables globales actuellement définies dans le contexte d'exécution global du script. 
+	  Les noms des variables sont les index du tableau.
+
+$_GET
+	- Liée à la méthode HTTP GET, contient tous les paramètres ayant été transmis au serveur par l'intermédiaire de l'URL de la requête (Query String Parameters).
+	- C'est un tableau associatif des valeurs passées au script courant via les paramètres d'URL (aussi connue sous le nom de "query string"). Notez que ce tableau n'est pas seulement rempli pour les requêtes GET, 
+	  mais plutôt pour toutes les requêtes avec un query string.
+	- ex : 	echo 'Bonjour ' . htmlspecialchars($_GET["name"]) . '!';
+		En assumant que l'utilisateur a entré http://example.com/?name=Yannick	
+		=> Bonjour Yannick!
+
+$_POST
+	- Liée à la méthode HTTP POST, contient toutes les données transmises au serveur par l'intermédiaire d'un formulaire (Form Data ou Request Body Parameters).
+	- C'est un tableau associatif des valeurs passées au script courant via le protocole HTTP et la méthode POST 
+	  lors de l'utilisation de la chaîne application/x-www-form-urlencoded ou multipart/form-data comme en-tête HTTP Content-Type dans la requête.
+
+Différence entre $_POST et $_GET :
+	- Dans notre exemple on utilise plutôt POST pour ne pas polluer l'URL
+	- Si on faisait un GET on devrait faire :
+		http://localhost/appli/traitement.php?name=Pomme&price=2.5&qtt=2	
+
+$_FILES
+	- Contient les informations associées à des fichiers uploadés par le client.
+	- C'est un tableau associatif des valeurs téléchargées au script courant via le protocole HTTP et la méthode POST.
+
+$_COOKIE
+	- Contient les données stockées dans les cookies du navigateur client.
+	- C'est un tableau associatif de variables, passé au script courant, via des cookies HTTP.
+		ex : 	echo 'Bonjour ' . htmlspecialchars($_COOKIE["name"]) . '!';
+			Bonjour Yannick ! ($_COOKIE["name"] (contient Yannick)
+
+$_SESSION
+	- Contient les données stockées dans la session utilisateur côté serveur (si cette session a été démarrée au préalable).
+	- C'est un tableau associatif des valeurs stockées dans les sessions, et accessible au script courant.
+	- Dans notre exemple $_SESSION contient les données saisie à l'ecran par l'utilisateur :
+		- $_SESSION est chargée dans "traitement.php" 		: $_SESSION['produits'][] = $produit;
+		- $_SESSION est parcourue et affichée dans "recap.php" 	: foreach($_SESSION['produits'] as $index => $produit)
+
+$_REQUEST
+	- Regroupe les données transmises par les trois superglobales $_GET, $_POST et $_COOKIE.
+	- C'est un tableau associatif qui contient par défaut le contenu des variables $_GET, $_POST et $_COOKIE.
+
+$_SERVER & $_ENV	
+	- Ce sont les variables d'environnement.
+	  (comme la version de l'OS, la version d'Apache, de PHP, le chemin du dossier web, etc.)
+	- Elles ne sont pas concernées par la transmission d'information du client vers le serveur,
+	- C'est un tableau associatif de variable passé au script courant, via la méthode d'environnement.
+	
