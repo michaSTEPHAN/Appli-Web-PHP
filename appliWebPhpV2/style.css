@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ************************************ */
+/* GESTION DE LA PAGE INDEX             */
+/* ************************************ */
+html {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    color: blue;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 150px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: left; */
+    gap: 10px;
+}
+
+.champSaisie {
+    border-radius: 10px;
+    height: 25px;    
+}
+
+.btnajouter {
+    color: blue;
+    background-color: rgb(161, 206, 235);
+    font-size: 18px;
+    border-radius: 10px;
+    margin: 30px;
+    height: 50px;
+    width: 250px;
+}
+
+/* ************************************ */
+/* GESTION DE LA PAGE RECAP             */
+/* ************************************ */
+
+td {
+    text-align: center;
+    padding: 10px;
+}
+
+th{
+    color: blue;
+    text-align: center;
+    padding: 10px;
+}
+
+/* ************************************ */
+/*       GESTION DE LA NAVIGATION       */
+/* ************************************ */
+nav {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+li {
+    list-style-type: none;
+}
+
+/* ************************************ */
+/*      AFFICHAGE DE LA QTE TOTALE      */
+/* ************************************ */
+/* i {
+    background-color: rgb(20, 220, 93);
+    border-radius: 10px;
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    
+} */
