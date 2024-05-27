@@ -12,10 +12,7 @@
         unset($_SESSION['message']);
     } else {
         $message = '';
-    }
-
-
-    
+    }    
 ?>
 
 <!DOCTYPE html>

@@ -13,30 +13,24 @@ html {
     justify-content: center;
     align-items: center;
 }
-
 h1 {
     color: blue;
     margin-top: 20px;
     margin-bottom: 20px;
 }
-
 input {
     width: 150px;
 }
-
 form {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* align-items: left; */
     gap: 10px;
 }
-
 .champSaisie {
     border-radius: 10px;
     height: 25px;    
 }
-
 .btnajouter {
     color: blue;
     background-color: rgb(161, 206, 235);
@@ -50,13 +44,11 @@ form {
 /* ************************************ */
 /* GESTION DE LA PAGE RECAP             */
 /* ************************************ */
-
 td {
     text-align: center;
     padding: 10px;
 }
-
-th{
+th {
     color: blue;
     text-align: center;
     padding: 10px;
@@ -69,19 +61,39 @@ nav {
     position: relative;
     margin-bottom: 10px;
 }
-
 li {
     list-style-type: none;
 }
 
 /* ************************************ */
-/*      AFFICHAGE DE LA QTE TOTALE      */
+/*         AFFICHAGE DES BOUTONS        */
 /* ************************************ */
-/* i {
-    background-color: rgb(20, 220, 93);
-    border-radius: 10px;
+.btn-raz {
+    text-decoration: none;
+    padding: 5px 10px;
+    background: rgb(207, 100, 100);
     color: white;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    
-} */
+    border-radius: 5px;
+}
+.btn-sup {
+    text-decoration: none;
+    padding: 5px 10px;
+    background: rgb(207, 100, 100);
+    color: white;
+    border-radius: 5px;
+   
+}
+.btn-qtPlus {
+    text-decoration: none;
+    padding: 5px 8px;
+    background: rgb(122, 204, 122);
+    color: white;
+    border-radius: 5px;
+}
+.btn-qtMoins {
+    text-decoration: none;
+    padding: 5px 8px;
+    background: rgb(207, 100, 100);
+    color: white;
+    border-radius: 5px;
+}
